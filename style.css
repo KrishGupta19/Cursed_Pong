@@ -1,0 +1,150 @@
+/* General body styling */
+body {
+    margin: 0; /* Remove default margin */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    background: #111; /* Dark background */
+    color: white; /* Default text color */
+    font-family: sans-serif; /* Simple sans-serif font */
+    min-height: 100vh; /* Ensure body takes at least full viewport height */
+    overflow: hidden; /* Prevent scrollbars */
+    touch-action: none; /* Disable default touch actions like scroll/zoom on the body */
+  }
+  
+  /* Canvas styling */
+  #gameCanvas {
+    background: #222; /* Slightly lighter background for the canvas */
+    border: 2px solid #555; /* Add a subtle border */
+    border-radius: 10px; /* Rounded corners for the canvas */
+    display: block; /* Prevents extra space below the canvas */
+    touch-action: none; /* Disable default touch actions on the canvas itself */
+    /* Set explicit dimensions in HTML or JS, or use max-width/aspect-ratio for responsiveness */
+     /* Example responsive sizing (adjust as needed): */
+     max-width: 90vw;
+     max-height: 80vh;
+     aspect-ratio: 1 / 1; /* Keep it square */
+  }
+  
+  /* Score display styling */
+  #scoreDisplay {
+    margin-top: 15px; /* Space above the score */
+    margin-bottom: 10px; /* Space below the score */
+    font-size: 24px; /* Larger font size for score */
+    font-weight: bold;
+    color: #eee; /* Light color for score text */
+  }
+  
+  /* Control button container (Optional, but good practice) */
+  #controls {
+      margin-top: 15px; /* Space above buttons */
+      display: flex; /* Arrange buttons in a row */
+      gap: 15px; /* Space between buttons */
+  }
+  
+  /* General button styling */
+  .button { /* Add this class to your rotate buttons */
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #444; /* Dark grey background */
+      border: 1px solid #666;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s ease; /* Smooth hover effect */
+      user-select: none; /* Prevent text selection on buttons */
+      -webkit-user-select: none; /* Safari */
+      -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* IE/Edge */
+  }
+  
+  .button:hover {
+      background-color: #555; /* Slightly lighter on hover */
+  }
+  
+  .button:active {
+      background-color: #333; /* Darker when pressed */
+  }
+  
+  
+  /* Game over screen styling */
+  #gameOverScreen {
+    position: absolute; /* Position over the game */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85); /* Semi-transparent black overlay */
+    display: none; /* Hidden by default - JS will change this to 'flex' */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    flex-direction: column; /* Stack content vertically */
+    color: white;
+    text-align: center;
+    z-index: 10; /* Ensure it's above the canvas */
+  }
+  
+  #gameOverScreen h2 {
+      font-size: 3em; /* Large "Game Over" text */
+      margin-bottom: 10px;
+      color: #ff4444; /* Reddish color for emphasis */
+  }
+  
+  #gameOverScreen p { /* Styles the final score text container */
+      font-size: 1.5em;
+      margin-bottom: 20px;
+  }
+  
+  /* New game button styling (specific style from user) */
+  #newGameButton {
+    padding: 12px 25px; /* Slightly larger padding */
+    font-size: 18px;
+    background: #0af; /* Blue background */
+    border: none;
+    color: white;
+    border-radius: 8px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease; /* Add transition */
+  }
+  
+  #newGameButton:hover {
+    background: #08d; /* Darker blue on hover */
+  }
+  
+  #newGameButton:active {
+    background: #06b; /* Even darker when pressed */
+    transform: scale(0.98); /* Slight shrink effect when pressed */
+  }
+  
+  /* Basic Mobile Responsiveness */
+  @media (max-width: 600px) {
+      #scoreDisplay {
+          font-size: 20px; /* Slightly smaller score text on mobile */
+      }
+  
+      #controls {
+          gap: 10px; /* Reduce gap between buttons */
+      }
+  
+      .button {
+          padding: 8px 15px; /* Smaller buttons */
+          font-size: 14px;
+      }
+  
+      #gameOverScreen h2 {
+          font-size: 2.5em; /* Adjust game over text size */
+      }
+  
+       #gameOverScreen p {
+          font-size: 1.2em; /* Adjust final score text size */
+      }
+  
+      #newGameButton {
+          padding: 10px 20px; /* Adjust button size */
+          font-size: 16px;
+      }
+  }
+  
+  
